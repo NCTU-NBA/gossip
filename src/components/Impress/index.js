@@ -28,6 +28,10 @@ export default connect((state) => ({
         if (wheel.deltaY >= 0) flipPage(+1);
         else flipPage(-1);
       };
+      item.onmouseup = click => {
+        const middleKey = 3;
+        if (click.button == middleKey) overview();
+      };
 
       function flipPage(n = 1) {
         if (isOveriew) {
